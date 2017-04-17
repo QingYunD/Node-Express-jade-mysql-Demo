@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     addJson: function(req, res) {
@@ -12,6 +13,10 @@ module.exports = {
             console.log('data:' + data);
             if (!data) {
                 // 不存在
+                if (!fs.existsSync('./public/json/')) {
+                    fs.mkdirSync('./public/json/');
+                }
+
                 // 创建一个可以写入的流 写入到文件中
                 const writestream = fs.createWriteStream(jsonUrl);
                 // 使用utf8编码写入数据
