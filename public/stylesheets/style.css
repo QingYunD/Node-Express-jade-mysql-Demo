@@ -1,0 +1,45 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+    color: #00B7FF;
+}
+.tagAdd {
+    border: 1px solid #999;
+    padding: 10px 20px;
+}
+.tagAdd div {
+    margin: 10px 0px;
+}
+.levelEach {
+    border: 1px solid #999;
+    padding: 3px 10px;
+    margin-right: 20px;
+}
+.levelSel {
+    cursor: pointer;
+}
+.levelSel.active {
+    background-color: #999;
+    color: #fff;
+}
+.addEnter {
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: #6083cc;
+    color: #fff;
+    text-decoration: none;
+    padding: 3px 10px;
+    margin-right: 20px;
+    border: 1px solid #1e34a5;
+}
+button {
+    outline: none;
+}
+.levelEachInfo {
+    margin-right: 10px;
+}
+.hide {
+    display: none;
+}

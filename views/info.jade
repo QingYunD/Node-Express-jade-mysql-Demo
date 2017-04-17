@@ -1,0 +1,28 @@
+extends layout
+block content
+	div(id="info")
+		h2 level列表
+		div(data-bind="foreach:$root.levelList")
+			span(class="levelEach" data-bind="text:$data.name")
+		h3 新增level
+		input(data-bind="value:levelAdd")
+		button(class="addEnter" data-bind="click:$root.addLevel") 确定
+		div
+			h3 新增tag标签
+			div(data-bind="with:$root.newTag" , class="tagAdd")
+				div 名称：
+					input(data-bind="value:name")
+					span 　　　次级名称：
+					input(data-bind="value:subName")
+				div 分类：
+					span(data-bind="foreach:$root.levelList")
+						span(class="levelEach levelSel" data-bind="text:$data.name , click:$root.newTagAddLevel,css:{active:$parent.level().indexOf($data.id)!=-1}")
+				button(class="addEnter" data-bind="click:$root.addTag") 添加
+		h2 tag列表
+		div(data-bind="foreach:$root.tagList")
+			div(data-bind="with:$data")
+				h3(data-bind="text:$index()+1 + '、' + name")
+				ul
+					li(data-bind="text:subName , css:{hide:!subName}")
+					li(data-bind="foreach:level , css:{hide:level.length==0}")
+						span(data-bind="text:$root.levelListJson[$data].name" , class="levelEachInfo")
