@@ -15,7 +15,7 @@ a {
 .levelEach {
     border: 1px solid #999;
     padding: 3px 10px;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 .levelSel {
     cursor: pointer;
@@ -42,4 +42,8 @@ button {
 }
 .hide {
     display: none;
+}
+.deleBtn {
+    border: 1px solid #999;
+    padding: 0px 3px;
 }

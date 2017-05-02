@@ -13,11 +13,16 @@
         "jade": "~1.11.0",
         "morgan": "~1.8.1",
         "serve-favicon": "~2.4.2",
-        "mysql": "latest"
+        "mysql": "latest",
+        "node-watch": "latest",
+        "socket.io": "0.9.x"
     },
     "author": "qinghuanweier",
     "repository": {
         "type": "git",
         "url": "ssh://git@https://github.com/QingYunD/Node-Express-jade-mysql-Demo.git"
+    },
+    "devDependencies": {
+        "socket.io": "^1.7.3"
     }
 }

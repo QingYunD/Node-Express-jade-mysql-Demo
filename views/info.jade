@@ -4,7 +4,8 @@ block content
 		h2 level列表
 		div(data-bind="foreach:$root.levelList")
 			span(class="levelEach" data-bind="text:$data.name")
-		h3 新增level
+			span(class="deleBtn" data-bind="text:'x'")
+		h3 新增level1
 		input(data-bind="value:levelAdd")
 		button(class="addEnter" data-bind="click:$root.addLevel") 确定
 		div

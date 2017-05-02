@@ -153,6 +153,11 @@ $(function() {
         });
     }
 
+    // level 删除
+    viewModel.deleLevel = function() {
+
+    }
+
     viewModel.getJsonData('levelList', 'getLevelList');
     viewModel.getJsonData('tagList', 'getTagList');
 
