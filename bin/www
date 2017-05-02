@@ -23,9 +23,6 @@ app.set('port', port);
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
-const fs = require('fs');
-
-
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -46,7 +43,7 @@ io.sockets.on('connection', function(socket) {
     //new user login
     socket.on('login', function() {
         console.log('login');
-        if (!watchStatus && fs.statSync(dirPath).isDirectory()) {
+        if (!watchStatus) {
           watch(dirPath, { recursive: true } , function(data , s) {
             if(data == 'update'){
               console.log(s + '文件改变');
@@ -56,7 +53,7 @@ io.sockets.on('connection', function(socket) {
           watchStatus = true;
         }
 
-        if(!watchStatusViews && fs.statSync(dirPathViews).isDirectory()){
+        if(!watchStatusViews){
           watch(dirPathViews, { recursive: true } , function(data , s) {
             if(data == 'update'){
               console.log(s + '文件改变');
